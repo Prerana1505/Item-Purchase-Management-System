@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Purchases</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+        <h2>Inventory System</h2>
+
+        <nav>
+            <a href="../index.html">Dashboard</a>
+            <a href="items.html">Manage Items</a>
+            <a href="purchases.html" class="active">Manage Purchases</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header>
+            <h1>Manage Purchases</h1>
+            <p>Create and view purchase orders.</p>
+        </header>
+
+        <section class="content-card">
+            <h2>Create New Purchase</h2>
+
+            <form id="purchaseForm">
+
+                <label>Order ID</label>
+                <input type="text" id="orderId"
+                    placeholder="Example: ORD-1003" required>
+
+                <label>Purchase Date</label>
+                <input type="date" id="purchaseDate" required>
+
+                <h3>Purchase Items</h3>
+
+                <div id="purchaseItems"></div>
+
+                <button type="button" id="addItemButton">
+                    + Add Another Item
+                </button>
+
+                <button type="submit">
+                    Create Purchase
+                </button>
+
+            </form>
+        </section>
+
+        <section class="content-card" style="margin-top: 25px;">
+
+            <h2>Purchase History</h2>
+
+            <table>
+                <thead>
+    <tr>
+        <th>Order ID</th>
+        <th>Item Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Purchase Date</th>
+        <th>Action</th>
+    </tr>
+</thead>
+
+                <tbody id="purchasesTable"></tbody>
+            </table>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="../js/purchases.js"></script>
+
+</body>
+</html>

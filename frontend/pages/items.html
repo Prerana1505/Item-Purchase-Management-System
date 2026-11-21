@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Items</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+        <h2>Inventory System</h2>
+
+        <nav>
+            <a href="../index.html">Dashboard</a>
+            <a href="items.html" class="active">Manage Items</a>
+            <a href="purchases.html">Manage Purchases</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header>
+            <h1>Manage Items</h1>
+            <p>Add, edit and manage your inventory items.</p>
+        </header>
+
+        <section class="content-card">
+            <h2 id="formTitle">Add New Item</h2>
+
+            <form id="itemForm">
+
+                <input type="hidden" id="itemId">
+
+                <label>Item Name</label>
+                <input type="text" id="name" placeholder="Enter item name" required>
+
+                <label>Purchase Date</label>
+                <input type="date" id="purchaseDate" required>
+
+                <label>Available Stock</label>
+                <input type="number" id="stock" min="0" required>
+
+                <label>Item Category</label>
+                <select id="itemType" required>
+                    <option value="">Select Category</option>
+                </select>
+
+                <button type="submit" id="submitButton">Add Item</button>
+                <button type="button" id="cancelButton" hidden>Cancel Edit</button>
+
+            </form>
+        </section>
+
+        <section class="content-card" style="margin-top: 25px;">
+
+            <h2>All Items</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Stock</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="itemsTable"></tbody>
+            </table>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="../js/items.js"></script>
+
+</body>
+</html>

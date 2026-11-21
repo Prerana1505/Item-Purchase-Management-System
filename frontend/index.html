@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item & Purchase Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <h2>Inventory System</h2>
+
+            <nav>
+                <a href="index.html" class="active">Dashboard</a>
+                <a href="pages/items.html">Manage Items</a>
+                <a href="pages/purchases.html">Manage Purchases</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <header>
+                <h1>Dashboard</h1>
+                <p>Welcome to Item & Purchase Management System</p>
+            </header>
+
+            <section class="stats">
+
+                <div class="stat-card">
+                    <h3>Total Items</h3>
+                    <p id="totalItems">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Active Items</h3>
+                    <p id="activeItems">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Total Purchases</h3>
+                    <p id="totalPurchases">0</p>
+                </div>
+
+            </section>
+
+            <section class="content-card">
+                <h2>Recent Items</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Item Name</th>
+                            <th>Category</th>
+                            <th>Available Stock</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="itemsTable">
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

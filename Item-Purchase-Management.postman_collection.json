@@ -1,0 +1,183 @@
+
+{
+  "info": {
+    "name": "Item Purchase Management API",
+    "description": "API collection for Item and Purchase Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    },
+    {
+      "key": "itemId",
+      "value": "1"
+    },
+    {
+      "key": "purchaseId",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "Item Types",
+      "item": [
+        {
+          "name": "Get All Item Types",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/item-types"
+          }
+        },
+        {
+          "name": "Create Item Type",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type_name\": \"Electronics\"\n}"
+            },
+            "url": "{{baseUrl}}/api/item-types"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Items",
+      "item": [
+        {
+          "name": "Get All Items",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/items"
+          }
+        },
+        {
+          "name": "Get Item By ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/items/{{itemId}}"
+          }
+        },
+        {
+          "name": "Create Item",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test Laptop\",\n  \"purchase_date\": \"2026-11-21\",\n  \"stock_available\": 20,\n  \"item_type_id\": 1\n}"
+            },
+            "url": "{{baseUrl}}/api/items"
+          }
+        },
+        {
+          "name": "Update Item",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Laptop\",\n  \"purchase_date\": \"2026-11-21\",\n  \"stock_available\": 25,\n  \"item_type_id\": 1\n}"
+            },
+            "url": "{{baseUrl}}/api/items/{{itemId}}"
+          }
+        },
+        {
+          "name": "Update Item Status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"active\": false\n}"
+            },
+            "url": "{{baseUrl}}/api/items/{{itemId}}/status"
+          }
+        },
+        {
+          "name": "Delete Item",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/items/{{itemId}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Purchases",
+      "item": [
+        {
+          "name": "Get All Purchases",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/purchases"
+          }
+        },
+        {
+          "name": "Get Purchase By ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/purchases/{{purchaseId}}"
+          }
+        },
+        {
+          "name": "Create Purchase",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order_id\": \"ORD-TEST-100\",\n  \"purchase_date\": \"2026-11-21\",\n  \"items\": [\n    {\n      \"item_id\": 1,\n      \"quantity\": 1\n    },\n    {\n      \"item_id\": 3,\n      \"quantity\": 2\n    }\n  ]\n}"
+            },
+            "url": "{{baseUrl}}/api/purchases"
+          }
+        },
+        {
+          "name": "Update Purchase",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order_id\": \"ORD-TEST-100\",\n  \"purchase_date\": \"2026-11-21\",\n  \"items\": [\n    {\n      \"item_id\": 1,\n      \"quantity\": 2\n    },\n    {\n      \"item_id\": 3,\n      \"quantity\": 1\n    }\n  ]\n}"
+            },
+            "url": "{{baseUrl}}/api/purchases/{{purchaseId}}"
+          }
+        }
+      ]
+    }
+  ]
+}
